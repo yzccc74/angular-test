@@ -1,0 +1,17 @@
+// .special {background-color:blue; color:#fff;}
+
+li {
+    width:300px;
+    cursor: pointer;
+    .bg-light {
+        background-color: #eee !important;
+    }
+    &.selected {
+        .bg-light {
+            background-color: #666 !important;
+        }
+        .text-dark {
+            color:#fff !important;
+        }
+    }
+}

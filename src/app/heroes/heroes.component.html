@@ -1,0 +1,48 @@
+<!-- <h2>{{ hero.name }} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div><span>name: </span>{{hero.name}}</div> -->
+
+
+<!-- 바인딩 예제 -->
+<div class="binding" style="display:none;">
+
+    <!-- attribute -->
+    <div>
+        <button type="button" class="btn btn-outline-secondary" [disabled]="isSpecial">property button</button>
+    </div>
+
+    <!-- class -->
+    <div>
+        <button type="button" class="btn btn-outline-secondary" [class.special]="isSpecial">class button</button>
+    </div>
+
+    <!-- property -->
+    <div>
+        <button type="button" class="btn btn-outline-secondary" [style.color]="isSpecial ? 'red' : 'green'">style button</button>
+    </div>
+
+    <!-- event -->
+    <div>
+        <button type="button" class="btn btn-outline-secondary" (click)="onSave($event)">event binding button</button>
+    </div>
+
+
+    <!-- Two way binding -->
+    <div>
+        <label>
+            name : <input type="text" class="form-control" [(ngModel)]="hero.name" placeholder="name">
+        </label>
+    </div>
+
+</div>
+
+
+<ul>
+    <li class="d-flex m-1" *ngFor="let hero of heroes"
+    (click)="onSelect(hero)" [class.selected]="hero===selectedHero">
+        <span class="rounded-left p-2 bg-primary text-light">{{hero.id}}</span>
+        <div class="rounded-right p-2 bg-light text-dark w-100">{{hero.name}}</div>
+    </li>
+</ul>
+
+<app-hero-detail [selectedHero]="selectedHero"></app-hero-detail>

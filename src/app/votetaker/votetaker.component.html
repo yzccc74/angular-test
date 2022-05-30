@@ -1,0 +1,11 @@
+<h3>Agree: {{agreed}}, Disagree: {{disagreed}}</h3>
+
+<app-voter *ngFor="let voter of voters"
+    [name]="voter"
+    (voted)="onVoted($event)">
+</app-voter>
+
+<!--
+[name] voter 값을 name 속성에 넣는다.
+(voted) voted라는 이벤트 발생시 onVoted 함수 실행
+-->
